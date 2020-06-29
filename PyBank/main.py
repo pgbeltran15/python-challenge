@@ -10,7 +10,8 @@ data = []
 
 # Define average
 def Average(lst): 
-    return sum(lst)/len(lst)
+    x = sum(lst)/len(lst)
+    return '${:,.2f}'.format(x)
 
 # Define get_key
 def get_key(val): 
@@ -26,11 +27,8 @@ with open(budget_data) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    # print(csvreader)
-
     # Create header
     csv_header = next(csvreader)
-    #print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
     for row in csvreader:
@@ -55,8 +53,7 @@ Net_Total = round(sum(data),2)
 Net_Total ='${:,.2f}'.format(Net_Total)
 
 # The average of the changes in "Profit/Losses" over the entire period
-Avg_Changes = round(Average(data),2)
-Avg_Changes = '${:,.2f}'.format(Avg_Changes)
+Avg_Changes = Average(data)
 
 # The greatest increase in profits (date and amount) over the entire period
 Greatest_Increase = max(data)
@@ -64,7 +61,7 @@ Greatest_Increase = max(data)
 # Get Month for Greastest Increase
 Month_Inc = get_key(Greatest_Increase)
 
-# Convert Greatest Increase to Currency 
+# # Convert Greatest Increase to Currency 
 Greatest_Increase = '${:,.2f}'.format(Greatest_Increase)
 
 # The greatest decrease in losses (date and amount) over the entire period
@@ -73,7 +70,7 @@ Greatest_Decrease = min(data)
 # Get Month for Greatest Decrease
 Month_Dec = get_key(Greatest_Decrease)
 
-# Convert Greatest Decrease to Currency
+# # Convert Greatest Decrease to Currency
 Greatest_Decrease = '${:,.2f}'.format(Greatest_Decrease)
 
 
