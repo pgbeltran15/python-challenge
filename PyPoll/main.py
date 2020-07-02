@@ -94,13 +94,30 @@ import sys
 output_path = os.path.join('Analysis','election_analysis.txt')
 
 with open(output_path, 'w') as f:
-    print("Election Results\n", file=f)
+    print("Election Results", file=f)
     print("----------------------\n", file=f)
-    print("Total Votes: " + Total_votes + "\n", file=f)
-    print("----------------------\n", file=f)
-    print("Khan: " + Khan_pct + " " + Khan_votes +"\n", file=f)
-    print("Li: " + Li_pct + " " + Li_votes +"\n", file=f)
-    print("Correy: " + Correy_pct + " " + Correy_votes +"\n", file=f)
-    print("O'Tooley: " + OTooley_pct + " " + OTooley_votes +"\n", file=f)
-    print("----------------------\n", file=f)
-    print("Winner: " + winner, file=f)
+    # print("Total Votes: " + Total_votes + "\n", file=f)
+    # print("----------------------\n", file=f)
+    # print("Khan: " + Khan_pct + " " + Khan_votes +"\n", file=f)
+    # print("Li: " + Li_pct + " " + Li_votes +"\n", file=f)
+    # print("Correy: " + Correy_pct + " " + Correy_votes +"\n", file=f)
+    # print("O'Tooley: " + OTooley_pct + " " + OTooley_votes +"\n", file=f)
+    # print("----------------------\n", file=f)
+    # print("Winner: " + winner, file=f)
+    for x, y in Election_Results.items():
+        if x == "Total Votes":
+            print(x, ':', y, file=f)
+    print("----------------------", file=f)
+    for a, b in Election_Results.items():
+        if a == "Khan":
+            print(a, ':', b, file=f)
+        elif a == "Li":
+            print(a, ':', b, file=f)
+        elif a == "Correy":
+            print(a, ':', b, file=f)
+        elif a == "O'Tooley":
+            print(a, ':', b, file=f)
+    print("----------------------", file=f)
+    for v, w in Election_Results.items():
+        if v == "Winner":
+            print(v, ':', w, file=f)

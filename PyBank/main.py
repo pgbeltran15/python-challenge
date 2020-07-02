@@ -90,8 +90,8 @@ import sys
 output_path = os.path.join('Analysis','bank_analysis.txt')
 
 with open(output_path, 'w') as f:
-    print("Financial Analysis\n", file=f)
-    print("----------------------\n", file=f)
+    print("Financial Analysis", file=f)
+    print("----------------------", file=f)
     for key, value in Financial_Analysis.items():
         print(key, ' : ', value, file=f)
 
