@@ -70,6 +70,7 @@ winner = (sorted(tally)[0])
 
 
 # Convert number of votes to string
+Total_votes = str(Total_votes)
 Khan_votes = "(" + str(Khan_votes) + ")"
 Li_votes = "(" + str(Li_votes) + ")"
 Correy_votes = "(" + str(Correy_votes) + ")"
@@ -93,4 +94,13 @@ import sys
 output_path = os.path.join('Analysis','election_analysis.txt')
 
 with open(output_path, 'w') as f:
-    print(Election_Results, file=f)
+    print("Election Results\n", file=f)
+    print("----------------------\n", file=f)
+    print("Total Votes: " + Total_votes + "\n", file=f)
+    print("----------------------\n", file=f)
+    print("Khan: " + Khan_pct + " " + Khan_votes +"\n", file=f)
+    print("Li: " + Li_pct + " " + Li_votes +"\n", file=f)
+    print("Correy: " + Correy_pct + " " + Correy_votes +"\n", file=f)
+    print("O'Tooley: " + OTooley_pct + " " + OTooley_votes +"\n", file=f)
+    print("----------------------\n", file=f)
+    print("Winner: " + winner, file=f)

@@ -75,14 +75,14 @@ Greatest_Decrease = '${:,.2f}'.format(Greatest_Decrease)
 
 
 
-Final_Results = {
+Financial_Analysis = {
     "Total Months": Total_Months,
     "Total": Net_Total,
     "Average Changes" : Avg_Changes,
     "Greatest Increase in Profits" : Month_Inc + " " + Greatest_Increase,
     "Greatest Decrease in Profits": Month_Dec + " " + Greatest_Decrease}
 
-print(Final_Results)
+print(Financial_Analysis)
 
 # Write into text file Analysis Folder
 import sys
@@ -90,4 +90,8 @@ import sys
 output_path = os.path.join('Analysis','bank_analysis.txt')
 
 with open(output_path, 'w') as f:
-    print(Final_Results, file=f)
+    print("Financial Analysis\n", file=f)
+    print("----------------------\n", file=f)
+    for key, value in Financial_Analysis.items():
+        print(key, ' : ', value, file=f)
+
