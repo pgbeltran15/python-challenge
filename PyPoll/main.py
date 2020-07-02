@@ -95,7 +95,7 @@ output_path = os.path.join('Analysis','election_analysis.txt')
 
 with open(output_path, 'w') as f:
     print("Election Results", file=f)
-    print("----------------------\n", file=f)
+    print("----------------------", file=f)
     for x, y in Election_Results.items():
         if x == "Total Votes":
             print(x, ':', y, file=f)
